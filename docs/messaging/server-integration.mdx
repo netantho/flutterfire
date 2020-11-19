@@ -36,6 +36,7 @@ Future<void> saveTokenToDatabase(String token) async {
   String userId = FirebaseAuth.instance.currentUser.uid;
 
   await FirebaseFirestore
+    .instance
     .collection('users')
     .doc(userId)
     .update({
